@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # @Author: yll
 # @Date:   2018-09-13 11:11:04
-# @Last Modified by:   yll
-# @Last Modified time: 2018-09-14 14:04:26
+# @Last Modified by:   yangll0620
+# @Last Modified time: 2018-09-25 17:41:32
 
 import time
 import csv
@@ -34,13 +34,14 @@ def prediction_perpair(file_train, file_test):
 	del x_train, y_train, x_test, y_test
 	return precision, recall, TNR, F_measure, G_mean, time_train
 
-
-folder_load = '../../Lidongyang/OriginalData/'
+path_Dropbox = '~/Dropbox/workSpace/SYSU/Projects/UnicomProject/Manuscripts/JournalJason/Complexity/'
+folder_load = path_Dropbox + 'Lidongyang/OriginalData/'
 file_07 =  folder_load + 'ZDJM_4G_XQ12_201507_T2_YUAN.csv'
 file_08 =  folder_load + 'ZDJM_4G_XQ12_201508_T2_YUAN.csv'
 file_09 =  folder_load + 'ZDJM_4G_XQ12_201509_T2_YUAN.csv'
 file_10 =  folder_load + 'ZDJM_4G_XQ12_201510_T2_YUAN.csv'
 
+path_save = path_Dropbox + 'Major Revision/Results/'
 savefile_name = 'results_ANN.csv'
 with open(savefile_name,'w') as csv_file:
 	fieldnames = ['type','precision','recall','TNR','F-measure','G-mean','train time']
