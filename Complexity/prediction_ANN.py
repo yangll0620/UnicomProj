@@ -2,7 +2,7 @@
 # @Author: yll
 # @Date:   2018-09-13 11:11:04
 # @Last Modified by:   yangll0620
-# @Last Modified time: 2018-09-25 17:41:32
+# @Last Modified time: 2018-09-25 19:25:10
 
 import time
 import csv
@@ -16,8 +16,10 @@ from evaluation import evaluate_prediction
 def prediction_perpair(file_train, file_test):
 # return precision, recall, TNR, F_measure, G_mean, time_train
 	
-	print("training data is " + file_train)
-	print( "test data is " + file_test)
+	print("training data is ")
+	print(file_train)
+	print( "test data is  ")
+	print(file_test)
 	[x_train, y_train] = data_load(file_train)
 	[x_test, y_test] = data_load(file_test)
 
@@ -42,7 +44,7 @@ file_09 =  folder_load + 'ZDJM_4G_XQ12_201509_T2_YUAN.csv'
 file_10 =  folder_load + 'ZDJM_4G_XQ12_201510_T2_YUAN.csv'
 
 path_save = path_Dropbox + 'Major Revision/Results/'
-savefile_name = 'results_ANN.csv'
+savefile_name = path_save + 'results_ANN.csv'
 with open(savefile_name,'w') as csv_file:
 	fieldnames = ['type','precision','recall','TNR','F-measure','G-mean','train time']
 	writer = csv.DictWriter(csv_file, fieldnames = fieldnames)
