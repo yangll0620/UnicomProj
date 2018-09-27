@@ -10,7 +10,7 @@ def model_Dense3Layers_training(x_train, y_train):
 # 			y_train: n_trials * 1
 
 	batch_size = 100
-	epochs = 5
+	epochs = 50
 	[_,n_input] = x_train.shape
 	_, label_counts = np.unique(y_train, return_counts = True)
 	ratio = round(float(label_counts[0])/float(label_counts[1]))

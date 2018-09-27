@@ -2,7 +2,7 @@
 # @Author: yangll0620
 # @Date:   2018-09-27 13:45:52
 # @Last Modified by:   yangll0620
-# @Last Modified time: 2018-09-27 15:24:39
+# @Last Modified time: 2018-09-27 15:43:00
 
 from sklearn.cluster import KMeans
 from loadData import data_load
@@ -20,6 +20,7 @@ def prediction_perpair(file_train, file_test):
 	print(file_train)
 	print( "test data is  ")
 	print(file_test)
+	print("loading data.......")
 	[x_train, y_train] = data_load(file_train)
 	[x_test, y_test] = data_load(file_test)
 
