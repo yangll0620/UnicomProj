@@ -10,7 +10,7 @@ def model_Dense3Layers_training(x_train, y_train):
 # 			y_train: n_trials * 1
 
 	batch_size = 100
-	epochs = 50
+	epochs = 5
 	[_,n_input] = x_train.shape
 	_, label_counts = np.unique(y_train, return_counts = True)
 	ratio = round(float(label_counts[0])/float(label_counts[1]))
@@ -37,7 +37,9 @@ def model_Dense3Layers_training(x_train, y_train):
 	return model
 
 def model_Dense3Layers_prediction(model, x_test):
-	y_pred = model.predict_classes(x_test)
+	y_prob = model.predict(x_test)
+	y_pred = np.zeros(np.array(y_prob).shape)
+	y_pred[np.array(y_prob)>=0.5] = 1
 	return y_pred
 
 
